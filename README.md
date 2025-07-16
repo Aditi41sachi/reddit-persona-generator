@@ -93,13 +93,4 @@ Do **not** share your `.env` file publicly as it contains sensitive API credenti
 
 This project is licensed under the terms of the MIT license.
 
----
-
-Feel free to update the `README.md` if you rename the script or add more features.
-
-```
-
----
-
-Would you like me to save this as a `README.md` file and provide the download link?
-```
+........
