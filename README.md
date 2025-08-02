@@ -1,4 +1,13 @@
 # Reddit-persona-generator
+
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![License: MIT](https://img.shields.io/badge/License-MIT-green)
+![Reddit API](https://img.shields.io/badge/API-Reddit-orange)
+![Gemini AI](https://img.shields.io/badge/AI-Google%20Gemini-yellow)
+![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen)
+
+---
+
 Generates user personas from Reddit profiles using Python and LLMs.
 
 The extracted project contains the following relevant files:
