@@ -43,11 +43,13 @@ This project generates AI-based personas for Reddit users by analyzing their pos
 
 reddit\_persona\_generator/
 ├── python persona\_generator.py   # Main script
-├── requirements.txt              # Python dependencies
-├── .env                          # Environment variables (not shared)
-├── \*\_persona.txt                 # Generated persona files
+├── requirements.txt               # Python dependencies
+├── .env                           # Environment variables (not shared)
+├── \*\_persona.txt                # Generated persona files
+├── requirements.txt               # Python dependencies
 ├── .gitignore
 ├── LICENSE
+└── README.md
 
 ````
 
