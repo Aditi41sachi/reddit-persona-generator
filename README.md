@@ -96,6 +96,15 @@ The generated persona will be saved in a text file named like `username_persona.
 * Reddit API credentials (via [Reddit App](https://www.reddit.com/prefs/apps))
 * Google Gemini API Key
 
+## 🚀 Future Improvements
+
+* Add support for multiple Reddit usernames in one run
+* Integrate OpenAI GPT models as alternative persona generators
+* Implement sentiment analysis on user comments
+* Create a web dashboard for generating and visualizing personas
+* Export personas in JSON/CSV formats in addition to .txt
+* Add language detection and multi-language support
+
 ## 🔐 Note
 
 Do **not** share your `.env` file publicly as it contains sensitive API credentials.
