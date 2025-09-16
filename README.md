@@ -8,6 +8,7 @@
 
 ---
 
+## 📖 Overview
 Generates user personas from Reddit profiles using Python and LLMs.
 
 The extracted project contains the following relevant files:
