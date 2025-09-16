@@ -4,6 +4,7 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-green)
 ![Reddit API](https://img.shields.io/badge/API-Reddit-orange)
 ![Gemini AI](https://img.shields.io/badge/AI-Google%20Gemini-yellow)
+![Open Source](https://img.shields.io/badge/Open%20Source-💡-brightgreen)
 
 ---
 
