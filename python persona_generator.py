@@ -79,8 +79,9 @@ except Exception as e:
 
 print(f"Total items scraped: {len(scraped_data)}")
 
-# LLM Persona Generation & Citation
-# 1. Prepare Text for LLM
+## LLM Persona Generation & Citation
+
+# Prepare Text for LLM
 full_text_for_llm = ""
 for item in scraped_data:
     full_text_for_llm += f"---NEW_ITEM---\nType: {item['type']}\nURL: {item['url']}\nContent: {item['content']}\n\n"
@@ -90,7 +91,8 @@ if len(full_text_for_llm) > MAX_LLM_INPUT_LENGTH:
     print(f"Warning: Scraped data exceeds {MAX_LLM_INPUT_LENGTH} characters. Truncating to prevent token limit issues.")
     full_text_for_llm = full_text_for_llm[:MAX_LLM_INPUT_LENGTH]
 
-# 2. Craft the LLM Prompt
+# Craft the LLM Prompt
+
 llm_prompt = f"""
 You are an advanced AI assistant specializing in generating comprehensive user personas based on provided text data.
 Your task is to analyze the "Reddit User Content" provided below and generate a detailed persona for the user.
@@ -123,13 +125,7 @@ Your task is to analyze the "Reddit User Content" provided below and generate a 
 {full_text_for_llm}
 """
 
-# 3. Call the LLM API
-# *** IMPORTANT CHANGE HERE ***
-# Updated model name to 'gemini-1.5-flash-latest' or 'gemini-1.5-pro-latest'
-# Check Google AI Studio's "Get API key" section or list_models() for currently available model names.
-llm_model = genai.GenerativeModel('gemini-1.5-flash-latest') # Recommended for cost-efficiency and speed
-# Alternatively, you can try 'gemini-1.5-pro-latest' for more advanced reasoning, but it might be slower/costlier.
-# llm_model = genai.GenerativeModel('gemini-1.5-pro-latest') 
+# Call the LLM API
 
 user_persona_output = "Persona generation failed."
 if scraped_data: 
