@@ -113,4 +113,4 @@ Do **not** share your `.env` file publicly as it contains sensitive API credenti
 ## 📄 License
 
 This project is licensed under the MIT License – see the LICENSE file for details.
-
+---
