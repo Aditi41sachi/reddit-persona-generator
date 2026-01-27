@@ -106,9 +106,8 @@ The generated persona will be saved in a text file named like `username_persona.
 * Export personas in JSON/CSV formats in addition to .txt
 * Add language detection and multi-language support
 
-## 🔐 Note
-
-Do **not** share your `.env` file publicly as it contains sensitive API credentials.
+> **Note**
+>Do **not** share your `.env` file publicly as it contains sensitive API credentials.
 
 ## 📄 License
 
