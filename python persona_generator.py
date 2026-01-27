@@ -22,14 +22,12 @@ if missing_vars:
 
 genai.configure(api_key=GOOGLE_GEMINI_API_KEY)
 
-# Initialize PRAW
 reddit = praw.Reddit(
     client_id=REDDIT_CLIENT_ID,
     client_secret=REDDIT_CLIENT_SECRET,
     user_agent=REDDIT_USER_AGENT
 )
 
-# Prompt for Reddit user profile URL and extract username
 while True:
     user_url = input('Enter the Reddit user profile URL (e.g., https://www.reddit.com/user/username): ').strip()
     try:
@@ -48,11 +46,9 @@ except Exception as e:
     print(f"Failed to initialize Redditor object for {username}: {e}")
     exit(1)
 
-# Scrape data
 scraped_data = []
 print(f"Scraping comments and posts for user: {username}...")
 
-# Scraping comments
 try:
     for comment in redditor.comments.new(limit=50):
         scraped_data.append({
@@ -64,7 +60,6 @@ try:
 except Exception as e:
     print(f"Error scraping comments: {e}")
 
-# Scraping posts (submissions)
 try:
     for submission in redditor.submissions.new(limit=50):
         content = submission.selftext if submission.is_self else submission.url
@@ -79,9 +74,6 @@ except Exception as e:
 
 print(f"Total items scraped: {len(scraped_data)}")
 
-## LLM Persona Generation & Citation
-
-# Prepare Text for LLM
 full_text_for_llm = ""
 for item in scraped_data:
     full_text_for_llm += f"---NEW_ITEM---\nType: {item['type']}\nURL: {item['url']}\nContent: {item['content']}\n\n"
@@ -90,8 +82,6 @@ MAX_LLM_INPUT_LENGTH = 10000
 if len(full_text_for_llm) > MAX_LLM_INPUT_LENGTH:
     print(f"Warning: Scraped data exceeds {MAX_LLM_INPUT_LENGTH} characters. Truncating to prevent token limit issues.")
     full_text_for_llm = full_text_for_llm[:MAX_LLM_INPUT_LENGTH]
-
-# Craft the LLM Prompt
 
 llm_prompt = f"""
 You are an advanced AI assistant specializing in generating comprehensive user personas based on provided text data.
@@ -125,7 +115,6 @@ Your task is to analyze the "Reddit User Content" provided below and generate a 
 {full_text_for_llm}
 """
 
-# Call the LLM API
 
 user_persona_output = "Persona generation failed."
 if scraped_data: 
@@ -142,8 +131,6 @@ else:
     user_persona_output = "No Reddit data scraped to generate a persona."
     print(user_persona_output)
 
-
-# Output the Persona
 output_filename = f"{username}_persona.txt"
 try:
     with open(output_filename, 'w', encoding='utf-8') as f:
