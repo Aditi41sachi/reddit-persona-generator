@@ -53,6 +53,7 @@ reddit\_persona\_generator/
 └── README.md
 
 ````
+---
 
 ## 🛠️ Installation
 
@@ -88,7 +89,6 @@ Run the main script:
 ```bash
 python "python persona_generator.py"
 ```
-
 The generated persona will be saved in a text file named like `username_persona.txt`.
 
 ## 📌 Requirements
